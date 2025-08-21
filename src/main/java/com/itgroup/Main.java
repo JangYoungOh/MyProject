@@ -31,13 +31,16 @@ public class Main {
             stmt = conn.createStatement();
 
             // 4. 현재 시간 조회
-            String sql = "SELECT 5 + 3 * 4 FROM dual";
+            //String sql = "SELECT 5 + 3 * 4 FROM dual";
+            String sql = "SELECT upper('hello') as upp, power(2,3) as pow FROM dual";
 
             rs = stmt.executeQuery(sql);
 
             // 5. 결과 출력
             if (rs.next()) {
-                System.out.println("계산 결과 : " + rs.getString(1));
+               //System.out.println("계산 결과 : " + rs.getString(1));
+                System.out.println("대문자 : " + rs.getString(1));
+                System.out.println("2의 3제곱 : " + rs.getString(2));
             }
 
         } catch (Exception e) {
